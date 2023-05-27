@@ -1,19 +1,21 @@
 import requests
 
 def track_phone(imei):
-    api_token ="pk.93ec4f4ae65a325b7d785c02eec583ff"  # Ganti dengan token API yang Anda dapatkan setelah mendaftar di OpenCelliD
-    url = f"https://us1.unwiredlabs.com/v2/process.php?token={api_token}&imei={imei_number}"
+    api_url = f"https://p3t.pdsi.lapan.go.id/api/v1/location/imei/{imei}"
+    headers = {"Authorization": "Bearer pk.93ec4f4ae65a325b7d785c02eec583ff"}
+    response = requests.get(api_url, headers=headers)
     
-    response = requests.get(url)
-    data = response.json()
-    
-    if 'status' in data and data['status'] == 'ok':
-        latitude = data['lat']
-        longitude = data['lon']
-        accuracy = data['accuracy']
-        print(f"Latitude: {latitude}, Longitude: {longitude}, Accuracy: {accuracy} meters")
+    if response.status_code == 200:
+        data = response.json()
+        
+        if 'latitude' in data and 'longitude' in data:
+            latitude = data['latitude']
+            longitude = data['longitude']
+            print(f"Latitude: {latitude}, Longitude: {longitude}")
+        else:
+            print("Data lokasi tidak ditemukan")
     else:
-        print("gak kenek")
+        print("Gagal melacak perangkat")
 
-imei_number ="369130033490637"  # Ganti dengan nomor IMEI perangkat yang ingin Anda lacak
+imei_number = "369130033490637"  # Ganti dengan nomor IMEI perangkat yang ingin Anda lacak
 track_phone(imei_number)
