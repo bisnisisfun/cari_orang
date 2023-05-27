@@ -1,7 +1,7 @@
 import requests
 
 def track_phone(imei):
-    api_token = "pk.93ec4f4ae65a325b7d785c02eec583ff"  # Ganti dengan token API yang Anda dapatkan setelah mendaftar di OpenCelliD
+    api_token = "93ec4f4ae65a325b7d785c02eec583ff"  # Ganti dengan token API yang Anda dapatkan setelah mendaftar di OpenCelliD
     url = f"https://us1.unwiredlabs.com/v2/process.php?token={api_token}&imei={imei}"
     
     response = requests.get(url)
