@@ -15,5 +15,5 @@ def track_phone(imei):
     else:
         print("gak iso jancok")
 
-imei_number =350388632046913("Masukkan nomor IMEI perangkat yang ingin Anda lacak: ")
+imei_number ="350388632046913"("Masukkan nomor IMEI perangkat yang ingin Anda lacak: ")
 track_phone(imei_number)
