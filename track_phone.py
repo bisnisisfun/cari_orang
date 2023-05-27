@@ -13,7 +13,7 @@ def track_phone(imei):
         accuracy = data['accuracy']
         print(f"Latitude: {latitude}, Longitude: {longitude}, Accuracy: {accuracy} meters")
     else:
-        print("Gagal melacak telepon")
+        print("gak kenek")
 
 imei_number ="350388632046913"  # Ganti dengan nomor IMEI perangkat yang ingin Anda lacak
 track_phone(imei_number)
