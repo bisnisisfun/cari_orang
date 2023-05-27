@@ -15,5 +15,5 @@ def track_phone(imei):
     else:
         print("Gagal melacak telepon")
 
-imei_number = "86913003490637"  # Ganti dengan nomor IMEI perangkat yang ingin Anda lacak
+imei_number = "869130033490637"  # Ganti dengan nomor IMEI perangkat yang ingin Anda lacak
 track_phone(imei_number)
